@@ -1,8 +1,8 @@
 version: 2
 
 sources:
-  - name: raw          # this is the label you'll reference in source('public', ...)
+  - name: stg          # this is the label you'll reference in source('public', ...)
     schema: PUBLIC          # the ACTUAL Snowflake schema name (only needed if it differs from `name`)
     database: DBTDEMO       # optional — defaults to your target database if omitted
     tables:
-      - name: CUSTOMERS    # the actual table name
+      - name: CUSTOMER_PRODUCT
