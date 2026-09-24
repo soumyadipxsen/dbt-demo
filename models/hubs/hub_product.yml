@@ -1,0 +1,29 @@
+version: 2
+
+models:
+
+  - name: hub_product
+    description: "Product hub containing one row per product id."
+
+    columns:
+      - name: hk_product
+        description: "Hash key generated from product_id."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: product_id
+        description: "Unique product id."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: load_dt
+        description: "Timestamp at which the product was first loaded."
+        data_tests:
+          - not_null
+
+      - name: source
+        description: "Source from which the record was loaded."
+        data_tests:
+          - not_null

@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: hub_customers
+    description: >
+      Customer hub contains one row per unique customer id.
+
+    columns:
+      - name: hk_customer
+        description: "hash key generated from customer_id."
+        data_type: binary
+        data_tests:
+          - not_null
+          - unique
+
+      - name: customer_id
+        description: "unique customer id."
+        data_type: varchar
+        data_tests:
+          - not_null
+          - unique
+
+      - name: load_dt
+        description: "Timestamp at which the record was loaded."
+        data_tests:
+          - not_null
+
+      - name: source
+        description: "Source  from which the record is loaded."
+        data_type: varchar
+        data_tests:
+          - not_null

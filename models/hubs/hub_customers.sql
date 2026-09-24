@@ -22,6 +22,6 @@ select
     source
 from customers_temp
 where rn=1
--- {% if is_incremental() %}
---   and hk_customer not in (select hk_customer from {{ this }})
--- {% endif %}
+{% if is_incremental() %}
+  and hk_customer not in (select hk_customer from {{ this }})
+{% endif %}

@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: link_customer_product
+    description: >
+      Link representing the relationship between a customer and a product.
+
+    columns:
+      - name: hk_customer_product
+        description: "Hash key generated from customer_id and product_id."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: hk_customer
+        description: "Reference to hub_customer."
+        data_tests:
+          - not_null
+
+      - name: hk_product
+        description: "Reference to hub_product."
+        data_tests:
+          - not_null
+
+      - name: load_dt
+        description: "Timestamp at which the relationship was first loaded."
+        data_tests:
+          - not_null
+
+      - name: source
+        description: "Source that supplied the record."
+        data_tests:
+          - not_null

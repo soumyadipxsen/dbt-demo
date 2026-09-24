@@ -1,0 +1,22 @@
+version: 2
+
+models:
+
+  - name: product_sat
+    description: "Historized descriptive attributes for products."
+
+    columns:
+      - name: hk_product
+        description: "Parent product hub hash key."
+        data_tests:
+          - not_null
+
+      - name: load_dt
+        description: "Start timestamp for this descriptive version."
+        data_tests:
+          - not_null
+
+      - name: product_hashdiff
+        description: "Hash of the tracked product attributes."
+        data_tests:
+          - not_null

@@ -1,0 +1,31 @@
+version: 2
+
+models:
+
+  - name: customer_sat
+    description: "Descriptive attributes for customers."
+
+    columns:
+      - name: hk_customer
+        description: "Parent customer hub hash key."
+        data_tests:
+          - not_null
+
+      - name: load_dt
+        description: "Start timestamp for this descriptive version."
+        data_tests:
+          - not_null
+
+      - name: customer_hashdiff
+        description: "Hash of the tracked customer attributes."
+        data_tests:
+          - not_null
+
+      - name: customer_status
+        description: "Customer status supplied by the source."
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["ACTIVE", "INACTIVE"]
+              config:
+                severity: warn

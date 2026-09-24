@@ -6,4 +6,4 @@ from {{ ref('sat_customer') }}
 group by
     hk_customer,
     load_dt
-    having count(*) > 1
+having count(*) > 1

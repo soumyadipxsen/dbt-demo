@@ -22,6 +22,6 @@ select
     source
 from products_temp
 where rn=1
--- {% if is_incremental() %}
---   and hk_product not in (select hk_product from {{ this }})
--- {% endif %}
+{% if is_incremental() %}
+  and hk_product not in (select hk_product from {{ this }})
+{% endif %}
