@@ -1,9 +1,9 @@
 version: 2
 
 sources:
-  - name: stg          # this is the label you'll reference in source('public', ...)
-    schema: PUBLIC          # the ACTUAL Snowflake schema name (only needed if it differs from `name`)
-    database: DBTDEMO       # optional — defaults to your target database if omitted
+  - name: stg     
+    schema: PUBLIC       
+    database: DBTDEMO
     tables:
       - name: CUSTOMER_PRODUCT
         description: Raw customer_product daa extracted from source 
@@ -18,3 +18,10 @@ sources:
             description: "Unique identifier for products."
             data_tests:
               - not_null
+          - name: customer_status
+            data_tests:
+              - accepted_values:
+                  arguments:
+                    values: ["ACTIVE", "INACTIVE"]
+                  config: 
+                    severity: warn
