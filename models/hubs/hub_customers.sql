@@ -1,4 +1,4 @@
-{{ config(materialized='incremental', unique_key='hk_customer') }}
+{{ config(materialized='incremental', unique_key='hk_customer', tags=['hub']) }}
 
 with customers as (
     select 

@@ -1,4 +1,4 @@
-{{ config(materialized='incremental') }}
+{{ config(materialized='incremental',tags=['link']) }}
 
 select
     hk_customer_product,

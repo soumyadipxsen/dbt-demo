@@ -6,3 +6,15 @@ sources:
     database: DBTDEMO       # optional — defaults to your target database if omitted
     tables:
       - name: CUSTOMER_PRODUCT
+        description: Raw customer_product daa extracted from source 
+
+        columns:
+          - name: customer_id
+            description: "Unique identifier for customers."
+            data_tests:
+              - not_null
+
+          - name: product_id
+            description: "Unique identifier for products."
+            data_tests:
+              - not_null

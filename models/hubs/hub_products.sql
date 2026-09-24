@@ -1,4 +1,4 @@
-{{ config(materialized='incremental', unique_key='hk_product') }}
+{{ config(materialized='incremental', unique_key='hk_product', tags=['hub']) }}
 
 with products as (
 select 
