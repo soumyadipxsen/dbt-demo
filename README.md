@@ -2,8 +2,7 @@
 
 This project demonstrates a simple Data Vault implementation using dbt Cloud and Snowflake.
 
-The source data contains customer and product information, along with the relationship between them.
-The data is first cleaned in the staging layer and then loaded into Data Vault hubs, links, and satellites.
+The source data contains customer and product information, along with the relationship between them. The data is first cleaned in the staging layer and then loaded into Data Vault hubs, links, and satellites.
 
 The main purpose of this project is to demonstrate:
 - Data Vault modelling using dbt
@@ -19,7 +18,6 @@ The project follows standard dbt development practices, including:
 - Layered data modeling
 - Automated data quality testing
 - Documentation and lineage generation
-- Environment-based deployment through dbt Cloud
 
 ---
 ## Prerequisites
@@ -29,4 +27,14 @@ Before running the project, ensure the following are in place:
 - Project repository connected to dbt Cloud
 - Appropriate permissions for the development environment
 - Required environment variables and credentials configured
+
+## Steps to run DBT project
+Run the following commands in the cli:
+- dbt deps
+- dbt parse
+- dbt build --select tag:stg
+- dbt build --select tag:hub
+- dbt build --select tag:link
+- dbt build --select tag:sat
+- dbt test
 ---
